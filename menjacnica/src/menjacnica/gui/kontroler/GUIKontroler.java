@@ -26,8 +26,8 @@ public class GUIKontroler {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					MenjacnicaGUI frame = new MenjacnicaGUI();
-					frame.setVisible(true);
+					GUIKontroler.gp= new MenjacnicaGUI();
+					GUIKontroler.gp.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -79,8 +79,8 @@ public class GUIKontroler {
 	}
 
 	public static void prikaziSveValute() {
-		JTable table = gp.getTable();
-		MenjacnicaTableModel model = (MenjacnicaTableModel) (table.getModel());
+		
+		MenjacnicaTableModel model = (MenjacnicaTableModel) (gp.getTable().getModel());
 		model.staviSveValuteUModel(GUIKontroler.menjacnica.vratiKursnuListu());
 
 	}
